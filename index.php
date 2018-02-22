@@ -19,7 +19,7 @@
 
 			function iniciarSesion(){
 
-				$usuario = $_POST["user"];
+				$usuario = strtolower($_POST["user"]);
 				$contrasena = md5($_POST["pass"]);
 
 				try{

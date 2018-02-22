@@ -43,7 +43,7 @@
 
 			function registrarse(){
 
-				$usuario = $_POST["user"];
+				$usuario = strtolower($_POST["user"]);
 				$contrasena = md5($_POST["pass1"]);
 				$nombre = $_POST["name"];
 				$apellidos = $_POST["apel"];

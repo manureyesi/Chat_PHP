@@ -30,6 +30,13 @@
 
 				}
 
+				if(isset($_POST["perfil"])){
+
+					header("location:perfil.php");
+					exit();
+
+				}
+
 				if(isset($_GET["usuario"])){
 
 					$_SESSION["remitente"] = $_POST["usuario"];
@@ -72,6 +79,8 @@
 			<form action="" method="post">
 
 				<div class="con">
+
+						<input type="submit" title="Editar Perfil" value="Editar Perfil" name="perfil" id="perfil"/>
 
 						<input type="submit" title="Cerrar Sesion" value="Cerrar Sesion" name="cerrar" id="cerrar"/>
 

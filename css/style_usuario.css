@@ -18,7 +18,7 @@ div#usuarios{
 	overflow: scroll;
 	background-color: white;
 	margin-left: 5%;
-  margin-right: 5%;
+  	margin-right: 5%;
 	resize: none;
 	width: 90%;
 	height: 500px;
@@ -38,9 +38,18 @@ input.usuario:hover{
 	background-color: #848484;
 }
 input#cerrar{
-  margin: 0 5%;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  	margin: 0 5%;
+  	margin-top: 20px;
+ 	margin-bottom: 10px;
+	width: 90%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 10px;
+}
+input#perfil{
+  	margin: 0 5%;
+  	margin-top: 20px;
+  	margin-bottom: 10px;
 	width: 90%;
 	padding-top: 5px;
 	padding-bottom: 5px;
