@@ -29,9 +29,10 @@ function inicio(){
 		else{
 			var user = document.getElementById("usuario").innerHTML;
 			var men = document.getElementById("escribir").value;
+			var emiso = document.getElementById("emisor").innerHTML;
 
 			enviar();
-			enviaDB(user, men);
+			enviaDB(emiso, user, men);
 
 		}
 
@@ -43,10 +44,15 @@ function inicio(){
 
 		document.getElementById("chat").innerHTML = document.getElementById("chat").innerHTML + texto;
 		document.getElementById("escribir").value = "";
+
+		var alto = $("#chat").height() + $("#chat").scrollTop();
+		$("#chat").animate({scrollTop:alto+"px"});
+		
 	}
 
-	function enviaDB(user, men){
+	function enviaDB(emiso, user, men){
 			var parametros = {
+					"emisor" : emiso,
 					"usuario" : user,
 					"mensaje" : men
 			};

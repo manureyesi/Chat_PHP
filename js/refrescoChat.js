@@ -2,11 +2,12 @@ $(document).ready(function() {
    var refreshId =  setInterval( function(){
         
 
-        /*var comprobar = false;
+        var comprobar = false;
+        var alto = $("#chat").height();
 
         if($(window).scrollTop() + $(window).height() == alto) {
             comprobar = true;
-        }*/
+        }
 
         var user = document.getElementById("usuario").innerHTML;
 
@@ -28,11 +29,10 @@ $(document).ready(function() {
                 });
         }
 
-        /*if(comprobar == true){
 
-
-
-        }*/
+        if(comprobar == true){
+            $("#chat").animate({scrollTop:alto+"px"});
+        }
 
 
 }, 1000 );

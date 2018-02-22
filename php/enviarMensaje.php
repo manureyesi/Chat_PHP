@@ -1,5 +1,4 @@
 <?php
-			session_start();
 
 		include "conexionDb.php";
 
@@ -9,7 +8,7 @@
 
 			$sql = $conexion->prepare('INSERT INTO mensajes (emisor, receptor, mensaje) VALUES (?,?,?)');
 
-				$datos = array($_SESSION["emisor"],$_GET["usuario"],$_GET["mensaje"]);
+				$datos = array($_POST["emisor"],$_POST["usuario"],$_POST["mensaje"]);
 
 			$sql->execute($datos);
 

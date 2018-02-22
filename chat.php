@@ -98,5 +98,7 @@
 
 		</div>
 
+		<p id="emisor" style="display: none"><?php echo $_SESSION["usuario"]; ?></p>
+
 	</body>
 </html>
