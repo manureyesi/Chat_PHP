@@ -27,7 +27,6 @@ function inicio(){
 			alert("No se permite enviar un espacio");
 		}
 		else{
-			alert("Enviado");
 			var user = document.getElementById("usuario").innerHTML;
 			var men = document.getElementById("escribir").value;
 
@@ -58,6 +57,9 @@ function inicio(){
 					beforeSend: function () {
 					},
 					success:  function (response) {
+					},
+					error: function (error) {
+						alert(error);
 					}
 			});
 	}

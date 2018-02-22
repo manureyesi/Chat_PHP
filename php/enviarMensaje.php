@@ -1,16 +1,23 @@
 <?php
+			session_start();
 
-	function enviar(){
+		include "conexionDb.php";
 
 		$conexion = conectate();
 
-		$sql = $conexion->prepare("INSERT INTO mensajes (emisor, receptor, mensaje) VALUES (?,?,?)");
+		try{
 
-			$datos = array($_post["emisor"],$_POST["usuario"],$_POST["mensaje"]);
+			$sql = $conexion->prepare('INSERT INTO mensajes (emisor, receptor, mensaje) VALUES (?,?,?)');
 
-		$sql->execute($datos);
+				$datos = array($_SESSION["emisor"],$_GET["usuario"],$_GET["mensaje"]);
+
+			$sql->execute($datos);
+
+		}
+		catch(PDOException $e){
+			echo $e->getMessage();
+		}
 
 
-	}
 
 ?>
