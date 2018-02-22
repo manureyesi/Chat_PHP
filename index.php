@@ -59,14 +59,15 @@
 
 						header("location:usuarios.php");
 
+						include "php/insertaLog.php";
 
-						$myfile = fopen("logUsuarios.txt", "a+");
+						$myfile = fopen("logUsuarios.txt", "a");
 						
 						date_default_timezone_set('ES');
 
 						$fecha = date('h:i:s l jS F Y');
 
-						$txt = $usuario . " inicio sesion a las " . $fecha . " desde " . $_SERVER[‘REMOTE_ADDR’] . "\r\n";
+						$txt = $usuario . " inicio sesion a las " . $fecha . " desde IP: " . $_SERVER['REMOTE_ADDR'] . "\r\n";
 						fwrite($myfile, $txt);
 						fclose($myfile);
 
