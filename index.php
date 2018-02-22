@@ -49,8 +49,8 @@
 
 					if($valores == $contrasena){
 
-            $erros = "";
-            comprobarCheck();
+			            $erros = "";
+			            comprobarCheck();
 
 						session_start();
 
@@ -58,6 +58,18 @@
 						$_SESSION[contrasena] = $contrasena;
 
 						header("location:usuarios.php");
+
+
+						$myfile = fopen("logUsuarios.txt", "a+");
+						
+						date_default_timezone_set('ES');
+
+						$fecha = date('h:i:s l jS F Y');
+
+						$txt = $usuario . " inicio sesion a las " . $fecha . " desde " . $_SERVER[‘REMOTE_ADDR’] . "\r\n";
+						fwrite($myfile, $txt);
+						fclose($myfile);
+
 						exit();
 
 
