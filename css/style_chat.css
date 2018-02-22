@@ -1,0 +1,105 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	width: 100%;
+	height: 100%;
+}
+body{
+	width: 100%;
+	height: 100%;
+}
+/* Contenedor Chat */
+div#contenedor{
+	margin: 0 auto;
+	width: 80%;
+	height: 100%;
+	background-color: #848484;
+	border-radius: 10px;
+}
+/* header */
+html{
+	min-height: 600px;
+}
+header{
+	height: 80px;
+}
+header a img#volver{
+	margin-left: 10%;
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	rotation: 180deg;
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+	width: 30px;
+	padding-left: 10px;
+}
+header img#perfil{
+	width: 60px;
+	border-radius: 30px;
+	position: relative;
+	top: 10px;
+}
+header h1{
+	position: relative;
+	top: -20px;
+	padding-left: 20px;
+	display: inline;
+}
+/* div chat */
+div#contenedor div#chat{
+	overflow-y: scroll;
+	margin-top: 20px;
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	background-color: white;
+	height: 70%;
+}
+/* emisor */
+div#contenedor div#chat span.mensaje{
+	margin-left: 20%;
+	width: 80%;
+	display: block;
+	text-align: right;
+}
+div#contenedor div#chat span.mensaje p{
+	background-color: yellow;
+	border-radius: 5px;
+	//padding: 2px 4px 2px 4px;
+	margin: 5px;
+	display: inline;
+}
+/* receptor */
+div#contenedor div#chat span.mensaje2{
+	width: 80%;
+	display: block;
+	text-align: left;
+}
+div#contenedor div#chat span.mensaje2 p{
+	background-color: red;
+	border-radius: 5px;
+	//padding: 2px 4px 2px 4px;
+	margin: 5px;
+	display: inline;
+}
+/* Enviar */
+div#formulario{
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+div#formulario input#escribir{
+	border-radius: 10px;
+	margin-top: 10px;
+	padding: 2px 2% 2px 2%;
+	width: 80%;
+	font-size: 20px;
+}
+div#formulario input#enviar{
+	border-radius: 10px;
+	margin-top: 10px;
+	padding: 2px 2% 2px 2%;
+	width: 15%;
+	font-size: 20px;
+}
