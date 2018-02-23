@@ -16,6 +16,8 @@
 
 		<link rel="icon" href="img/chat.png" type="image/png" sizes="16x16">
 
+		<link href="css/style_perfil.css" rel="stylesheet" type="text/css">
+
 		<?php
 
 			include "php/conexionDb.php";
@@ -51,7 +53,6 @@
 
 		<?php
 
-
 			$sql = $conexion ->prepare("SELECT * FROM usuarios WHERE usuario = ?");
 
 				$datos = array($_SESSION["usuario"]);
@@ -66,6 +67,13 @@
 				$apellidos = $row["apellidos"];
 				$email = $row["email"];
 
+				$existe = false;
+
+				if($row["fotoPerfil"] != NULL){
+					$existe = true;
+					$dirFoto = $row["fotoPerfil"];
+				}
+
 			}
 
 		?>
@@ -74,31 +82,81 @@
 
 			<h1>Modificando Perfil de <?php echo $nombre; ?></h1>
 
-			<form method="post" action="pruebaPHP.php">
+			<div id="fotoPerfil">
+
+				<?php
+
+					if($existe == false){
+
+						echo "<img id='perfil' src='img/perfil/fotodefecto.png'>";
+					}
+					else{
+
+						echo "<img id='perfil' src='". $row["fotoPerfil"] ."'>";
+
+					}
+
+				?>
 				
-				<label for="nombre">Nombre:</label>
-				<input type="text" id="nombre" name="nombre" placeholder="Nombre" value="<?php echo $nombre; ?>"><br>
+			</div>
 
-				<label for="apellidos">Apellidos:</label>
-				<input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" value="<?php echo $apellidos; ?>"><br>
+			<div id="formulario">
+				<form method="post">
 
-				<label for="contrasena">Contraseña:</label>
-				<input type="password" id="contrasena" name="pass1" placeholder="Contraseña"><br>
+					<label for="nombre">Nombre:</label><br>
+					<input type="text" id="nombre" name="nombre" placeholder="Nombre" value="<?php echo $nombre; ?>"><br>
 
-				<label for="repContrasena">Repetir Contraseña:</label>
-				<input type="password" id="repContrasena" name="pass2" placeholder="Repetir Contraseña"><br>
+					<label for="apellidos">Apellidos:</label><br>
+					<input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" value="<?php echo $apellidos; ?>"><br>
 
-				<label for="email">Email:</label>
-				<input type="email" id="email" name="email" placeholder="Email" value="<?php echo $email; ?>"><br>
+					<label for="contrasena">Contraseña:</label><br>
+					<input type="password" id="contrasena" name="pass1" placeholder="Contraseña"><br>
 
-				<label for="perfil">Foto Perfil:</label>
-				<input type="file" id="perfil" name="archivo-a-subir"><br>
+					<label for="repContrasena">Repetir Contraseña:</label><br>
+					<input type="password" id="repContrasena" name="pass2" placeholder="Repetir Contraseña"><br>
 
-				<input type="submit" name="modificar" id="modificar" value="Modificar Datos"><br>
-				<input type="submit" name="volver" id="volver" value="Volver">
+					<label for="email">Email:</label><br>
+					<input type="email" id="email" name="email" placeholder="Email" value="<?php echo $email; ?>"><br>
 
-			</form>
+					<input type="submit" name="modificar" value="Modificar Datos">
 
+				</form>
+
+				<br>
+				<br>
+
+				<form action="php/subirFotoPerfil.php" method="post" enctype="multipart/form-data">
+					
+					<?php
+						if($existe == true){
+							echo "<label for='fotoPerfil'>Cambiar foto Perfil:</label>"; 
+						}
+						else{
+							echo "<label for='fotoPerfil'>Sube foto de Perfil:</label>"; 
+						}
+					?>
+					<input type="file" name="fotoPerfil" id="fotoPerfil">
+					<br/>
+					<br/>
+
+					<?php
+						if($existe == true){
+							echo "<input type='submit' value='Cambia Foto' name='submit'>"; 
+						}
+						else{
+							echo "<input type='submit' value='Subir Foto' name='submit'>"; 
+						}
+					?>
+
+				</form>
+
+				<br>
+				<br>
+				
+				<form method="post">
+					<input type="submit" name="volver" value="Volver">
+				</form>
+			</div>
 			<span id="errores"></span>
 				
 			

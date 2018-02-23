@@ -1,0 +1,57 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+div#contenedor{
+	min-width: 750px;
+	margin: 0 auto;
+	margin-top: 5px;
+	width: 40%;
+	background-color: #BDBDBD;
+	border-radius: 10px;
+}
+h1{
+	text-align: center;
+	padding-bottom: 20px;
+}
+div#fotoPerfil{
+	padding-left: 20px;
+	padding-right: 20px;
+	float: left;
+	width: 200px;
+	height: 600px;
+}
+img{
+	border-radius: 30px;
+	width: 200px;
+	height: 180px;
+}
+label{
+	font-size: 20px;
+}
+input{
+	font-size: 18px;
+	width: 300px;
+	margin-bottom: 10px;
+}
+
+@media screen and (max-width: 850px){
+
+	div#contenedor{
+		min-width: 450px;
+		width: 100%;
+	}
+	div#fotoPerfil{
+		padding-left: 20px;
+		padding-right: 20px;
+		float: none;
+		width: 200px;
+		height: 200px;
+	}
+	div#formulario{
+		padding-left: 30px;
+	}
+
+
+}

@@ -84,5 +84,15 @@ input{
 		padding-bottom: 5px;
 		border-radius: 10px;
 	}
+	input#perfil{
+		font-size: 30px;
+		margin-top: 10px;
+		margin-right: 5%;
+		margin-left: 5%;
+		width: 90%;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		border-radius: 10px;
+	}
 
 }
