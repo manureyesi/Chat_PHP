@@ -1,14 +1,6 @@
 $(document).ready(function() {
    var refreshId =  setInterval( function(){
         
-
-        var comprobar = false;
-        var alto = $("#chat").height();
-
-        if($(window).scrollTop() + $(window).height() == alto) {
-            comprobar = true;
-        }
-
         var user = document.getElementById("usuario").innerHTML;
 
         realizaProceso(user);
@@ -27,11 +19,6 @@ $(document).ready(function() {
                                 $("#chat").html(document.getElementById("chat").innerHTML + response);
                         }
                 });
-        }
-
-
-        if(comprobar == true){
-            $("#chat").animate({scrollTop:alto+"px"});
         }
 
 

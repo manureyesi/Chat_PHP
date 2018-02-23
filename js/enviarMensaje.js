@@ -45,7 +45,7 @@ function inicio(){
 		document.getElementById("chat").innerHTML = document.getElementById("chat").innerHTML + texto;
 		document.getElementById("escribir").value = "";
 
-		var alto = $("#chat").height() + $("#chat").scrollTop();
+		var alto = $("#chat").height() + $("#chat").scrollTop()*5;
 		$("#chat").animate({scrollTop:alto+"px"});
 		
 	}
