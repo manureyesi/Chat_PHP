@@ -18,11 +18,13 @@
 
 			echo "<span class='mensaje2'><p>" .  $row["mensaje"] . "</p></span>";
 
+			$update = $conexion->prepare("UPDATE mensajes SET visto=1 WHERE cod = ?");
+				$datos = array($row["cod"]);
+			$update->execute($datos);
+
 		}
-		
-        $update = $conexion->prepare("UPDATE mensajes SET visto=1 WHERE cod = ?");
-        	$datos = array($row["cod"]);
-        $update->execute($datos);
+
+
 
 	}
 
